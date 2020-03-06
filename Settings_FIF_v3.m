@@ -44,15 +44,16 @@ function options = Settings_FIF_v3(varargin)
 %                           the remainder
 %  Xi          (1.6)   Parameter we use to tune the mask length
 %  alpha       ('ave') Parameter used for the mask length computation.
-%                           Allowed values [0,100], 'ave' or 'Almost_min'.
-%                           If set to 0 the mask length is proportional to the 
-%                           minimum distance between two subsequent extrema.
-%                           If set to 1 then it is proportional to the 
-%                           maximum distance. If set to 'ave' the mask length 
-%                           equals round(2*Xi*(length of the signal)/
-%                           (number of extrema)). Finally if set to
-%                           'Almost_min' it is set to a value close to the
-%                           minimum.
+%                           Allowed values 'ave', [0,100] or 'Almost_min'.
+%                           If set to 'ave' the mask length equals 
+%                           round(2*Xi*(length of the signal)/(number of extrema)).
+%                           If set to 0 the mask length is proportional to the
+%                           0 percentile of the distances between two subsequent extrema.
+%                           If set to 100 then it is proportional to the 
+%                           100 percentile of the distances between two subsequent extrema. 
+%                           Finally if set to 'Almost_min' it is set to 
+%                           a value close to the minimum (30-th percentile).
+%                           
 %  MaxInner    (200)   Maximum number of inner steps allowed.
 %  MonotoneMaskLength (true) Boolean: if true when the algorithm compute a new mask length that is smaller or equal 
 %                            to the previous one then automatically it increases to 1.1 of the previous mask length. 
