@@ -530,11 +530,11 @@ if c > 0
     %             end
     %         else
     %             disp('Code missing!')
-    %         end    
-    if Mins(cmins)==0
+    %         end 
+    if cmins>0 && Mins(cmins)==0 
         Mins(cmins)=N;
     end
-    if Maxs(cmaxs)==0
+    if cmaxs>0 && Maxs(cmaxs)==0
         Maxs(cmaxs)=N;
     end
 end
