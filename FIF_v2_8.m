@@ -89,27 +89,6 @@ diffMaxmins_pp=diff(maxmins_pp);
 N_pp=length(f_pp);
 k_pp = length(maxmins_pp);
 
-if options.plots>=2
-    maxmins=Maxmins_v3_5(f);
-    figMask=figure;
-    title(['Maxima for IMF_{1}'])
-    plot(f*Norm1f,'b','LineWidth',2)
-    hold on
-    plot(maxmins,f(maxmins)*Norm1f,'kx','markersize',10,'linewidth',2)
-    legend('Signal','Maxes and mins')
-    set(figMask,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
-    hold off
-    
-    figMask2=figure;
-    title(['Mask length IMF_{1}'])
-    plot(maxmins(1:end-1),diff(maxmins),'kx','markersize',10,'linewidth',2)
-    hold on
-    plot(spline(maxmins(1:end-1),diff(maxmins),1:N),'linewidth',2)
-    set(figMask2,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
-end
-
-
-
 countIMFs=0;
 
 while countIMFs < options.NIMFs && k_pp>=options.ExtPoints
@@ -277,23 +256,7 @@ while countIMFs < options.NIMFs && k_pp>=options.ExtPoints
     diffMaxmins_pp=diff(maxmins_pp);
     N_pp=length(f_pp);
     k_pp = length(maxmins_pp);
-    
-    if options.plots>=2
         
-        hMaxs=h(Maxs);
-        posNegMax=find(hMaxs<0);
-        hMins=h(Mins);
-        posPosMin=find(hMins>0);
-        figure(figMask2);
-        title(['Maxima for ' sprintf('IMF%1.0d  Step # %5.0d',countIMFs,inStepN)])
-        plot(h*Norm1f,'b','LineWidth',2)
-        hold on
-        plot(Maxs(posNegMax),hMaxs(posNegMax)*Norm1f,'rx','markersize',10,'linewidth',2)
-        plot(Mins(posPosMin),hMins(posPosMin)*Norm1f,'yx','markersize',10,'linewidth',2)
-        legend('h','Negative Maxes','Positive Mins')
-        set(figMask2,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
-        hold off
-    end
     if options.saveInter==1
         save([nameFile '_intermediate_FIF_v2_8.mat'],'IMF','f','stats','-v7.3');
     end
