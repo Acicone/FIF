@@ -75,7 +75,7 @@ function options = Settings_FIF_v3(varargin)
 %  Please cite: 
 %
 %  A. Cicone, H. Zhou. "Numerical Analysis for Iterative Filtering with 
-%  New Efficient Implementations Based on FFT". Numerische Mathematik, 2020. 
+%  New Efficient Implementations Based on FFT". Numerische Mathematik, 147 (1), pages 1-28, 2021.
 %  doi: 10.1007/s00211-020-01165-5
 %  ArXiv http://arxiv.org/abs/1802.01359
 %
