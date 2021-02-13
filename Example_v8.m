@@ -10,8 +10,9 @@
 %
 %  Please cite: 
 %
-%  A. Cicone, H. Zhou. 'Numerical Analysis for Iterative Filtering with
-%  New Efficient Implementations Based on FFT'
+%  A. Cicone, H. Zhou. "Numerical Analysis for Iterative Filtering with 
+%  New Efficient Implementations Based on FFT". Numerische Mathematik, 2020. 
+%  doi: 10.1007/s00211-020-01165-5
 %  ArXiv http://arxiv.org/abs/1802.01359
 %
 %  A. Cicone. 'Iterative Filtering as a direct method for the decomposition 
