@@ -41,6 +41,14 @@ function s_ext = Extend_sig_v2(s,ext_type,L,figOn)
 % Please refer to the wextend help for more details
 %
 % Based on an original idea by Emanuele Papini
+%
+%  Please cite: 
+%
+%  A. Stallone, A. Cicone, M. Materassi. New insights and best practices 
+%  for the successful use of Empirical Mode Decomposition, Iterative Filtering 
+%  and derived algorithms. Scientific Reports, Volume 10, article number 15161, 2020. 
+%  doi: 10.1038/s41598-020-72193-2
+%
 
 
 if nargin < 2, help Extend_sig_v2, end
