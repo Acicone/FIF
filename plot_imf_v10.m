@@ -6,6 +6,7 @@ function[h]=plot_imf_v10(imf,T,NsubPltos,titLeg,h,TextSize,date)
 % titLeg = Title to be displayed on top to each figure
 % h = handles to the figures
 % TextSize = size of the axis and title
+% date = (0) if T is not a datenum. 1 if we are using datenum T
 
 
 [m,n]=size(imf);
@@ -24,11 +25,11 @@ if nargin <6, TextSize=24; end
 
 if isempty(TextSize), TextSize=24; end
 
-if nargin <7, date=-1; end
+if nargin <7, date=0; end
 
-LeftCorner=0.05; 
+LeftCorner=0.1; 
 BottomCorner=0.06;
-widthImage=0.9; 
+widthImage=1-LeftCorner-0.1; 
 DeltaYImages=0.01;
 heightImage=(1-BottomCorner-BottomCorner/2)/NsubPltos-DeltaYImages;
 
@@ -45,11 +46,11 @@ for j=1:ceil(m/NsubPltos)
         for i=1:NsubPltos
             subplot('Position',[LeftCorner BottomCorner+(NsubPltos-i)*(heightImage+DeltaYImages) widthImage heightImage]);
             plot(T,imf(i+(j-1)*NsubPltos,:),'k','LineWidth',2);
-            axis([T(1) T(end) -Inf Inf])
+            axis tight
             set(gca,'fontsize', TextSize);
             if i==NsubPltos
-                if date>=0
-                    datetickzoom('x',date)
+                if date>0
+                    datetick('x','keepticks','keeplimits')%datetickzoom('x',date)
                 end
             else
                 set(gca,'XTick',[]);
@@ -75,11 +76,11 @@ for j=1:ceil(m/NsubPltos)
         for i=1:rem(m,NsubPltos)
             subplot('Position',[LeftCorner BottomCorner+(NsubPltos-i)*(heightImage+DeltaYImages) widthImage heightImage]);            
             plot(T,imf(i+(j-1)*NsubPltos,:),'k','LineWidth',2);
-            axis([T(1) T(end) -Inf Inf])
+            axis tight
             set(gca,'fontsize', TextSize);
             if i==rem(m,NsubPltos)
                 if date>=0
-                    datetickzoom('x',date)
+                    datetick('x','keepticks','keeplimits')%datetickzoom('x',date)
                 end
             else
                 set(gca,'XTick',[]);
@@ -102,7 +103,7 @@ for j=1:ceil(m/NsubPltos)
             %pause(0.1)
         end
     end
-    set(h(j),'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
+    %set(h(j),'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 end
 
 if nargin >= 4  && not(isempty(titLeg))

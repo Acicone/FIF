@@ -30,11 +30,13 @@ y=4*(t-0.5).^2;
 
 z=x+y+1;
 
-plot_imf_v8([x;y+ones(1,length(t))])
+plot_imf_v10([x;y+ones(1,length(t))],t,2)
+title('Ground Truth')
 
 figure
 plot(t,z,'b','linewidth',2)
 set(gca,'fontsize', 20);
+title('Signal')
 
 %% FIF with standard settings
 
