@@ -1,7 +1,7 @@
 # FIF
 Fast Iterative Filtering for the decompostion of non-stationary signals [1,2,3].
 
-Please refer to "Example_v8.m" and "Example_real_life_v6.m" for examples of how to use the code.
+Please refer to "Example_v8.m" and "Example_real_life_v6.m" for examples on how to use the code.
 
 It is based on FFT, which makes FIF to be really fast [2,3].
 This implies that it is required a periodical extension at the boundaries.
