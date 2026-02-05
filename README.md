@@ -1,14 +1,14 @@
 # FIF
-Fast Iterative Filtering for the decompostion of non-stationary signals [1,2,3].
+Fast Iterative Filtering for the decomposition of non-stationary signals [1,2,3].
 
 Please refer to "Example_v8.m" and "Example_real_life_v6.m" for examples on how to use the code.
 
-It is based on FFT, which makes FIF to be really fast [2,3].
-This implies that it is required a periodical extension at the boundaries.
+It is based on FFT, which makes FIF really fast [2,3].
+This implies that a periodic extension at the boundaries is required.
 
-To overcome this limitation we can preextend the signal under investigation [4].
+To overcome this limitation, we can pre-extend the signal under investigation [4].
 We do it thanks to the function "Extend_sig_v2.m". 
-See "Example_real_life_v6.m" for an example of application.
+See "Example_real_life_v6.m" for an example of an application.
 
 Please cite our works: 
 
